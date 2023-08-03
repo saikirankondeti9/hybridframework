@@ -1,0 +1,56 @@
+package keywords;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import base.BaseTest;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class GenricKeywords extends BaseTest {
+	public void browserSetUp() {
+		String browserName=configProp.getProperty("browser");
+		switch("browserName") {
+		case "chrome":
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver();
+			break;
+		case "firefox":
+			WebDriverManager.firefoxdriver().setup();
+			driver=new FirefoxDriver();
+			break;
+		case "edge":
+			WebDriverManager.edgedriver().setup();
+			driver=new EdgeDriver();
+			
+		}
+		driver.get(configProp.getProperty("url"));
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Long.parseLong(configProp.getProperty("implicitwait")), TimeUnit.SECONDS);
+		
+	}
+	public WebElement getElement(String locatorKey) {
+		WebElement element=null;
+		element=driver.findElement(locationOfElement(locatorKey));
+		return null;
+		
+	}
+	private By locationOfElement(String locatorKey) {
+		By by=null;
+		
+		switch() {
+		case 
+		
+		}
+		
+
+
+		return null;
+	}
+	
+
+}

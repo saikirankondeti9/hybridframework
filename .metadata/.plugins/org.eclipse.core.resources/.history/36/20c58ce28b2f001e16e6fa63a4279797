@@ -1,0 +1,28 @@
+package testscripts.regression;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import keywords.ApplicationKeywords;
+
+public class validateLoginHybrid {
+	@Test
+	public void validateLogin() {
+		ApplicationKeywords apk=new ApplicationKeywords();
+		apk.browserSetUp();
+		apk.type("usernameTextBox_xpath", null);
+		apk.type("passwordTextBox_xpath", null);
+		apk.click("loginButton_xpath");
+		apk.validateURL(null);
+		
+		
+	}
+	@DataProvider
+	public Object[][] getData(){
+		Object[][] data=new Object[1][1];
+		data[0][0]=
+		return null;
+		
+	}
+
+}

@@ -1,0 +1,43 @@
+package steps;
+
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class StepDefinitions {
+	WebDriver driver;
+
+	@Given("user starts {string} browser")
+	public void user_starts_browser(String browserName) {
+		if(browseName.)
+
+	}
+
+	@Given("user launch app using url {string}")
+	public void user_launch_app_using_url(String string) {
+
+	}
+
+	@When("user enters username {string} using xpath {string}")
+	public void user_enters_username_using_xpath(String string, String string2) {
+
+	}
+
+	@When("user enters password {string} using xpath {string}")
+	public void user_enters_password_using_xpath(String string, String string2) {
+
+	}
+
+	@When("user clicks enter button using xpath {string}")
+	public void user_clicks_enter_button_using_xpath(String string) {
+
+	}
+
+	@Then("user validates title to be {string}")
+	public void user_validates_title_to_be(String string) {
+
+	}
+
+}

@@ -1,0 +1,37 @@
+package testscripts.regression;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+import utils.UtilKit;
+
+public class ValidateLoginUsingExcelWithDataProvider2 extends BaseTest {
+	@Test(dataProvider = "getData")
+	public void StringteLoginTest1(HashMap<String,String> datamap) {
+		driver.findElement(By.xpath("")).sendKeys(datamap.get(""));
+		driver.findElement(By.xpath("")).sendKeys(datamap.get(""));
+		driver.findElement(By.xpath("")).click();
+		Assert.assertEquals(driver.getCurrentUrl(), datamap.get(""));
+		
+	}
+	@DataProvider
+	public Object[][] getData() throws IOException{
+		
+		Object[][] data=new Object[1][1];
+		data[0][0]=UtilKit.getTestData("");
+		return data;
+		
+	
+		
+	}
+
+}

@@ -1,0 +1,3 @@
+usernameTextBox_xpath=(//input)[2]
+passwordTextBox_xpath=(//input)[3]
+loginButton_xpath=//button[text()=' Login ']

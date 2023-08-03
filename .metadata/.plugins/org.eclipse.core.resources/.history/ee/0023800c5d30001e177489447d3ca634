@@ -1,0 +1,37 @@
+package steps;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class StepDefinitions {
+	@Given("user starts \"chrome\"browser")
+	public void user_starts_chrome_browser() {
+
+	}
+
+	@Given("user launch app using url\"https:\\/\\/opensource-demo.orangehrmlive.com\\/web\\/index.php\\/auth\\/login\"")
+	public void user_launch_app_using_url_https_opensource_demo_orangehrmlive_com_web_index_php_auth_login() {
+	}
+
+	@When("user enters username {string} using xpath\"\\/\\/input[@name={string}]\"")
+	public void user_enters_username_using_xpath_input_name(String string, String string2) {
+
+	}
+
+	@When("user enters password {string} using xpath\"\\/\\/input[@name={string}]\"")
+	public void user_enters_password_using_xpath_input_name(String string, String string2) {
+
+	}
+
+	@When("user clicks enter button using xpath\"\\/\\/button[text\\()={string}]\"")
+	public void user_clicks_enter_button_using_xpath_button_text(String string) {
+
+	}
+
+	@Then("user validates title to be {string}")
+	public void user_validates_title_to_be(String string) {
+
+	}
+
+}

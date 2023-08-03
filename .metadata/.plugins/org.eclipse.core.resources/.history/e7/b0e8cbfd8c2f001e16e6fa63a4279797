@@ -1,0 +1,48 @@
+package utils;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import base.BaseTest;
+
+public class UtilKit extends BaseTest {
+	public HashMap<String,String> getTestData(String testCase) throws IOException{
+	fIS3=new FileInputStream("src\\test\\resources\\testdata\\testingdata.xlsx");
+	XSSFWorkbook wB=new XSSFWorkbook(fIS3);
+	XSSFSheet wS=wB.getSheet("Sheet1");
+	ArrayList<Row> testCaseRows=getTestCaseRows(wS,testCase);
+	HashMap<String,String> hashMap=new HashMap<String,String>();
+	for(int i=0;i<testCaseRows.size();i++) {
+		int noOfCells=testCaseRows.get(i).getPhysicalNumberOfCells()-1;
+		for(int j=1;j<noOfCells;j++) {
+			hashMap.put(testCaseRows.get(i).getCell(j).getStringCellValue(), testCaseRows.get(1).getCell(j).getStringCellValue());
+		}
+	}
+	return hashMap;
+	
+	}
+
+	private ArrayList<Row> getTestCaseRows(XSSFSheet wS, String testCase) {
+		ArrayList<Row> rowsList=new ArrayList<Row>();
+		for(int i=0;i<wS.getLastRowNum();i++) {
+			if(!(wS.getRow(i)==null)) {
+				rowsList.add(wS.getRow(i));
+			}
+			
+		}
+		ArrayList<Row> testCaseRows=new ArrayList<Row>();
+		for(int i=0;i<rowsList.size();i++) {
+			if(rowsList.get(i).getCell(0).getStringCellValue().equalsIgnoreCase(testCase)) {
+				testCaseRows.add(rowsList.get(i));
+			}
+			
+		}
+		return testCaseRows;
+	}
+}

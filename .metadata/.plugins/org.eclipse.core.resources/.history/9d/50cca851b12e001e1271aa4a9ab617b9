@@ -1,0 +1,5 @@
+package testscripts.smoke;
+
+public class ValidateSearchHotel {
+
+}

@@ -1,0 +1,33 @@
+package testscripts.regression;
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+import keywords.ApplicationKeywords;
+import utils.UtilKit;
+
+public class ValidateLoginHybrid extends BaseTest {
+	@Test(dataProvider = "getData")
+	public void validateLogin(HashMap<String,String> hMap) {
+		ApplicationKeywords apk=new ApplicationKeywords();
+		apk.browserSetUp();
+		apk.type("usernameTextBox_xpath", hMap.get("username"));
+		apk.type("passwordTextBox_xpath", hMap.get("password"));
+		apk.click("loginButton_xpath");
+		apk.validateURL(hMap.get("Expected URL"));
+		
+		
+	}
+	@DataProvider
+	public Object[][] getData() throws IOException{
+		Object[][] data=new Object[1][1];
+		data[0][0]=UtilKit.getTestData("TC-1");
+		return data;
+		
+	}
+
+}

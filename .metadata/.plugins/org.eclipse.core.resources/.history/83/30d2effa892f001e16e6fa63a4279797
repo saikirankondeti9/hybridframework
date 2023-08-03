@@ -1,0 +1,9 @@
+package keywords;
+
+import org.testng.Assert;
+
+public class ValidationKeywords extends GenricKeywords {
+	public void validateurl(String expURL) {
+		Assert.assertEquals(driver.getCurrentUrl(), expURL);
+	}
+}

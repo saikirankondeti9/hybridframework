@@ -1,0 +1,16 @@
+package runner;
+
+import org.junit.runner.RunWith;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(glue="steps",
+dryRun = false,tags = "@test2@test1",
+stepNotifications=true,
+features= //{"src\\test\\resources\\features\\regression\\validatelogin.feature",})
+{"src\\test\\resources\\features\\regression\\LoginDataParameterization.feature"})
+public class RegRunner {
+
+}
